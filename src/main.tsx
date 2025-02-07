@@ -1,14 +1,16 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import WidthContext from './context/WidthContext.tsx'
 import './index.css'
+import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <StrictMode>
     <BrowserRouter>
-        <App /> 
-    </BrowserRouter>
-  </React.StrictMode>,
+      <WidthContext>
+          <App />
+      </WidthContext> 
+    </BrowserRouter> 
+  </StrictMode>,
 )
-
