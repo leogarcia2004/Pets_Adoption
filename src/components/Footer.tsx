@@ -2,7 +2,7 @@ import logo_footer from '../public/images/footer/image.png'
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col py-10'>
+    <footer className='flex flex-col lg:px-36 px-4 py-10'>
         <div className='flex md:flex-row flex-col md:gap-0 gap-8 justify-around items-center border-b-2 border-black pb-10'>
             <img className='w-40 h-40' src={logo_footer} alt="Logo adoção" />          
             <div className='flex md:flex-row flex-col md:justify-evenly lg:gap-28 gap-16'>
