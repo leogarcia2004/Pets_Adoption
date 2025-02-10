@@ -10,35 +10,35 @@ export const animalsCarousel = [
 export const animalsAdoption = [
     {
         image: '/src/public/images/home_adoption_Page/image_cat1.png',
-        name: ''
+        name: 'BOB'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_cat2.png',
-        name: ''
+        name: 'MARY'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_dog1.png',
-        name: ''
+        name: 'RONEY'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_dog2.png',
-        name: ''
+        name: 'FLOCKS'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_cat3.png',
-        name: ''
+        name: 'CLORINDE'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_dog3.png',
-        name: ''
+        name: 'ARISTOLE'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_cat4.png',
-        name: ''
+        name: 'MATT'
     },
     {
         image: '/src/public/images/home_adoption_Page/image_dog4.png',
-        name: ''
+        name: 'ROBS'
     }
 ]
 

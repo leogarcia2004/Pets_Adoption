@@ -96,7 +96,6 @@ const HomePage = () => {
                   arrows: false,
                   pagination: true,
                 }}
-
               >
                 {services.map((service, index) => (
                   <SplideSlide key={index} className="carousel-slide">

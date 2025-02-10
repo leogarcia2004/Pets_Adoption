@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     (
-      windowWidth > 768 ? 
+      windowWidth > 1024 ? 
       <header className="bg-[#F5F5F5] flex flex-wrap gap-14 justify-center md:items-center border-b-2 border-black lg:px-36 px-4 py-6">
         <nav className="flex gap-8 items-center font-semibold">
             <img className="cursor-pointer" onClick={handleNavigate} src={logo} alt="Ícone cachorro e gato" />
