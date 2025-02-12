@@ -9,6 +9,10 @@ interface WidthContextData {
     windowWidth: number;
     handleNavBar?: () => void;
     navBarOpen?: boolean;
+    handleModalDonate?: () => void;
+    modalDonateOpen?: boolean;
+    handleModalAdopt?: () => void;
+    modalAdoptOpen?: boolean;
 }
 
 const WidthContext = createContext( {} as WidthContextData );
@@ -16,6 +20,8 @@ const WidthContext = createContext( {} as WidthContextData );
 const WidthContextProvider:React.FC<PropsWidth> = ({children}) => {
     
     const [navBarOpen, setNavBarOpen] = useState(false)
+    const [modalDonateOpen, setModalDonateOpen] = useState(false)
+    const [modalAdoptOpen, setModalAdoptOpen] = useState(false)
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
       
       useEffect(() => {
@@ -28,8 +34,16 @@ const WidthContextProvider:React.FC<PropsWidth> = ({children}) => {
         setNavBarOpen(!navBarOpen)
       }
 
+      const handleModalDonate = () => {
+        setModalDonateOpen(!modalDonateOpen)
+      }
+
+        const handleModalAdopt = () => {
+            setModalAdoptOpen(!modalAdoptOpen)
+        }
+
     return (
-        <WidthContext.Provider value={{windowWidth, handleNavBar, navBarOpen}}>
+        <WidthContext.Provider value={{windowWidth, handleNavBar, navBarOpen, handleModalDonate, modalDonateOpen, handleModalAdopt, modalAdoptOpen}}>
             {children}
         </WidthContext.Provider>
     )

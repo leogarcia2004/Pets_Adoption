@@ -9,7 +9,7 @@ const Header = () => {
   const handleNavigate = () => {
     navigate("/");
   }
-  const { windowWidth, handleNavBar, navBarOpen } = useWidthContext();
+  const { windowWidth, handleNavBar, navBarOpen, handleModalDonate } = useWidthContext();
 
   return (
     (
@@ -40,7 +40,7 @@ const Header = () => {
                 <i className="fa fa-phone text-xl"></i>
                 631-249-7325
             </div>
-            <button className="rounded-3xl bg-pink-600 py-3 px-4 flex items-center font-bold text-white">
+            <button onClick={handleModalDonate} className="rounded-3xl bg-pink-600 py-3 px-4 flex items-center font-bold text-white cursor-pointer">
                 <i className="fa fa-heart mr-2 text-xl"></i>
                 Donate
             </button>

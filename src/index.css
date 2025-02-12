@@ -4,6 +4,24 @@
   font-family: 'Poppins', sans-serif;
 }
 
+dialog{
+  border-radius: 25px;
+  border: none;
+  margin: auto;
+  
+  animation: animacaoModal 0.7s ease normal;
+}
+
+@keyframes animacaoModal {
+  from {
+      transform: translateX(1000px);
+  }
+    
+  to {
+      transform: translateX(0);
+  }
+}
+
 .custom-splide .splide__track {
   display: flex;
   justify-content: center;
@@ -24,4 +42,28 @@
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+input[type="radio"]:checked{
+  background-image: url('../src/public/images/checked.png');
+  background-size: cover;
+  background-position: center;
+}
+
+input[type="radio"]:checked + label{
+  background-color: #3F96FC;
+  color: #FFFFFF;
+} 
+
+#checar[type="checkbox"]:checked{  
+  background-color: #d3d3d3;
+}
+
+#checar[type="checkbox"]:checked::before{
+  content: "✔️";
+  color: #FFFFFF;
+  font-size: 12px;
+  position: relative;
+  top: -3.5px;
+  left: 2px;
 }

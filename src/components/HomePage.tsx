@@ -9,24 +9,28 @@ import '@splidejs/react-splide/css';
 import { useWidthContext } from "../context/WidthContext";
 import { animalsCarousel, services } from './constantes';
 import { Link } from 'react-router-dom'
+import ModalAdopt from './ModalAdopt'
+import ModalDonate from './ModalDonate'
 
 const HomePage = () => {
 
-  const {windowWidth} = useWidthContext()
+  const {windowWidth, modalAdoptOpen, modalDonateOpen, handleModalDonate, handleModalAdopt} = useWidthContext()
 
   return (
     <>
+    {modalDonateOpen && <ModalDonate />}
+    {modalAdoptOpen && <ModalAdopt />}
       <section className='bg-[#F5F5F5] flex md:flex-row flex-col md:gap-20 gap-12 lg:px-36 px-4 py-20'>
           <div className='max-w-[550px] flex flex-col'>
             <h1 className='text-5xl font-bold leading-16 mb-10'>Forever Homes Shelter</h1>
             <p className=' text-lg font-medium leading-10 mb-4'>Our mission is to rescue and provide rehabilitation to dogs and cats that are critically injured or neglected. We have already saved the lives of 10,000 animals. We are not just a rescue, we are a refuge.</p>
             <h3 className='text-2xl font-bold mb-4'>Your Gift Helps Save Lives</h3>
             <div className='flex gap-6'>
-              <button className="rounded-3xl bg-pink-600 py-3 px-4 flex items-center font-bold text-white cursor-pointer">
+              <button onClick={handleModalDonate} className="rounded-3xl bg-pink-600 py-3 px-4 flex items-center font-bold text-white cursor-pointer">
                 <i className="fa fa-heart mr-2 text-xl"></i>
                 Donate
               </button>
-              <button className='border-black border-2 py-2 px-6 rounded-full flex items-center font-semibold text-sm cursor-pointer'>
+              <button onClick={handleModalAdopt} className='border-black border-2 py-2 px-6 rounded-full flex items-center gap-2 font-semibold text-sm cursor-pointer'>
                   <i className="fas fa-dog text-2xl"></i>
                   Apply to Adopt
               </button>
@@ -126,7 +130,7 @@ const HomePage = () => {
                     <li >Be over 23 years of age to adopt a dog and 21 years of age to adopt a cat</li>
                     <li >Be ready to adopt within 7-10 days</li>
                 </ul>
-                <button className='bg-[#1E1F27] w-40 text-white border-2 py-3 px-6 rounded-full flex items-center font-bold text-sm cursor-pointer'>
+                <button onClick={handleModalAdopt} className='bg-[#1E1F27] w-40 text-white border-2 py-3 px-6 rounded-full flex items-center font-bold text-sm cursor-pointer'>
                   Apply to Adopt
                 </button> 
             </div>
@@ -184,7 +188,7 @@ const HomePage = () => {
                   <Link to="/adoptables">
                     <button className='bg-[#F8DB46] rounded-full font-bold py-3 w-48 cursor-pointer'>View Adoptables</button>
                   </Link>        
-                    <button className='rounded-full font-bold text-sm text-white py-3 w-44 border border-white cursor-pointer'>Apply to Adopt</button>
+                    <button onClick={handleModalAdopt} className='rounded-full font-bold text-sm text-white py-3 w-44 border border-white cursor-pointer'>Apply to Adopt</button>
                 </div>
             </div> 
             {windowWidth > 1024 ? <img className='' src={Dog} alt="Foto gato"/> : ''}
