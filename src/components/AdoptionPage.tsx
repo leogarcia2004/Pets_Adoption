@@ -4,12 +4,15 @@ import WhiteDog from "../public/images/adoptionPage/icon_white_dog.png"
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useWidthContext } from "../context/WidthContext";
+import ModalDonate from "../components/ModalDonate";
 
 const AdoptionPage = () => {
 
-  const {windowWidth} = useWidthContext()
+  const {windowWidth, modalDonateOpen} = useWidthContext()
 
   return (
+    <>
+    {modalDonateOpen && <ModalDonate />}
     <div className="bg-[#1E1F27] px-4 flex flex-col items-center py-28">
           <Link to="/">
             <button className="bg-[#37383F] rounded-full text-white cursor-pointer flex items-center gap-2 px-6 py-3 mb-24"> 
@@ -38,14 +41,14 @@ const AdoptionPage = () => {
             :
             (
               <Splide
-                options={ {
+                options={{
                   type: 'loop',
                   perPage: 1,
                   perMove: 1,
                   arrows: false,
                   pagination: true,
-
-                } }
+                }}
+                
               >
                 {
                   animalsAdoption.map((animal, index) => {
@@ -69,6 +72,8 @@ const AdoptionPage = () => {
           
         </ul>
     </div>
+    </>
+    
   )
 }
 

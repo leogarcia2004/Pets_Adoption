@@ -6,17 +6,17 @@ import ThanksPage from "./components/ThanksPage";
 import Footer from "./components/Footer";
 
 function App() {
-
+  const url = window.location.href;
   return (
-    <div>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage/>} />  
         <Route path="/adoptables" element={<AdoptionPage />} />
         <Route path="/thank" element={<ThanksPage />} />
       </Routes>
-      <Footer />
-    </div>
+      {url == 'http://localhost:5173/thank' ? null : <Footer />}
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useWidthContext } from "../context/WidthContext";
 import { UserDonate } from "../type/User";
 import { validateDonate } from "../utils/validateDonate";
+import { useNavigate } from 'react-router-dom';
 
 const ModalDonate = () => {
 
@@ -10,14 +11,19 @@ const ModalDonate = () => {
   const [payment, setPayment] = useState(0)
   const [methodPayment, setMethodPayment] = useState<string | undefined>(undefined)
   const [errors, setErrors] = useState<UserDonate | null>(null)
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const data: UserDonate = { email, payment, methodPyment: methodPayment } 
+    const data: UserDonate = { email, payment, methodPayment: methodPayment } 
     const validadeErros = validateDonate(data) 
     if(Object.keys(validadeErros).length > 0) {
       setErrors(validadeErros) 
       return
+    }
+    navigate('/thank')
+    if (handleModalDonate) {
+      handleModalDonate()
     }
   }
 
@@ -40,24 +46,48 @@ const ModalDonate = () => {
                       )}
                     </div>
             
-                    <div className={errors?.methodPyment ? 'flex flex-col gap-2' : ''}>
+                    <div className={errors?.methodPayment ? 'flex flex-col gap-2' : ''}>
                       <label className="text-pink-500 font-semibold text-xs">PAYMENT METHOD<strong className="text-blue-500">*</strong></label>     
                       <div className="flex items-center gap-3">
-                          <div className="border border-blue-400 rounded-lg py-3 w-24 flex items-center text-[#1E1F27] justify-between px-2 font-semibold">
-                              <label htmlFor="pix">Pix</label>
-                              <input className="appearance-none bg-[#1E1F27] w-4 h-4 rounded-full cursor-pointer" value={methodPayment}  type="radio" name="pix" id="pix"/>                                                            
-                          </div>
-                          <div className="border border-blue-400 rounded-lg py-3 w-[115px] flex items-center text-[#1E1F27] justify-between px-2 font-semibold">
-                            <label htmlFor="card">Card Credit</label>
-                            <input className="appearance-none bg-[#1E1F27] checked:bg- w-4 h-4 rounded-full cursor-pointer" value={methodPayment}  type="radio" name="pix" id="card"/>        
-                          </div>                      
-                          <div className="border border-blue-400 rounded-lg py-3 w-24 flex items-center text-[#1E1F27] justify-between px-2 font-semibold">
-                            <label htmlFor="picpay">Picpay</label>
-                            <input className="appearance-none bg-[#1E1F27] w-4 h-4 rounded-full cursor-pointer" value={methodPayment}  type="radio" name="pix" id="picpay"/>
-                          </div>                        
+                        <div className={`border ${methodPayment === "pix" ? "border-pink-500" : "border-blue-400"} rounded-lg py-3 w-24 flex items-center text-[#1E1F27] justify-between px-2 font-semibold`}>
+                          <label htmlFor="pix">Pix</label>
+                          <input
+                            className="appearance-none bg-[#1E1F27] w-4 h-4 rounded-full cursor-pointer"
+                            type="radio"
+                            name="methodPayment"
+                            id="pix"
+                            value="pix"
+                            checked={methodPayment === "pix"}
+                            onChange={(e) => setMethodPayment(e.target.value)}
+                          />
+                        </div>
+                        <div className={`border ${methodPayment === "card" ? "border-pink-500" : "border-blue-400"} rounded-lg py-3 w-[115px] flex items-center text-[#1E1F27] justify-between px-2 font-semibold`}>
+                          <label htmlFor="card">Card Credit</label>
+                          <input
+                            className="appearance-none bg-[#1E1F27] w-4 h-4 rounded-full cursor-pointer"
+                            type="radio"
+                            name="methodPayment"
+                            id="card"
+                            value="card"
+                            checked={methodPayment === "card"}
+                            onChange={(e) => setMethodPayment(e.target.value)}
+                          />
+                        </div>
+                        <div className={`border ${methodPayment === "picpay" ? "border-pink-500" : "border-blue-400"} rounded-lg py-3 w-24 flex items-center text-[#1E1F27] justify-between px-2 font-semibold`}>
+                          <label htmlFor="picpay">Picpay</label>
+                          <input
+                            className="appearance-none bg-[#1E1F27] w-4 h-4 rounded-full cursor-pointer"
+                            type="radio"
+                            name="methodPayment"
+                            id="picpay"
+                            value="picpay"
+                            checked={methodPayment === "picpay"}
+                            onChange={(e) => setMethodPayment(e.target.value)}
+                          />
+                        </div>                       
                       </div>
-                      {errors?.methodPyment && (
-                            <small className="text-xs text-red-500 mt-1">{errors?.methodPyment}</small>
+                      {errors?.methodPayment && (
+                            <small className="text-xs text-red-500 mt-1">{errors?.methodPayment}</small>
                       )}
                     </div>
                       <button className="rounded-3xl bg-pink-500 py-3 px-4 text-sm flex items-center self-center font-bold text-white cursor-pointer" type="submit">

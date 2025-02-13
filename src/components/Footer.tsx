@@ -2,11 +2,11 @@ import logo_footer from '../public/images/footer/image.png'
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col lg:px-36 px-4 py-10'>
+    <footer className='bg-[#F5F5F5] flex flex-col lg:px-36 px-4 py-10'>
         <div className='flex md:flex-row flex-col md:gap-0 gap-8 justify-around items-center border-b-2 border-black pb-10'>
             <img className='w-40 h-40' src={logo_footer} alt="Logo adoção" />          
-            <div className='flex md:flex-row flex-col md:justify-evenly lg:gap-28 gap-16'>
-              <ul className='flex md:flex-col flex-wrap  gap-3 font-semibold'>
+            <div className='flex md:flex-row flex-col  md:justify-evenly lg:gap-28 gap-16'>
+              <ul className='flex md:flex-col justify-center flex-wrap gap-3 font-semibold'>
                   <li className='md:text-base text-sm'>Adopt a Pet</li>
                   <li className='md:text-base text-sm'>Adoptable Dogs</li>
                   <li className='md:text-base text-sm'>Adoptable Cats</li>
@@ -14,7 +14,7 @@ const Footer = () => {
                   <li className='md:text-base text-sm'>Rescue Center</li>
                   <li className='md:text-base text-sm'>Get Involved</li>
               </ul>
-              <ul className='flex md:flex-col flex-wrap gap-3 font-semibold'>
+              <ul className='flex md:flex-col justify-center flex-wrap gap-3 font-semibold'>
                   <li className='md:text-base text-sm'>Ways to Donate</li>
                   <li className='md:text-base text-sm'>Upcoming Events</li>
                   <li className='md:text-base text-sm'>Outreach Programs</li>

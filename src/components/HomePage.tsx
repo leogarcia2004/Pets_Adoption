@@ -20,10 +20,10 @@ const HomePage = () => {
     <>
     {modalDonateOpen && <ModalDonate />}
     {modalAdoptOpen && <ModalAdopt />}
-      <section className='bg-[#F5F5F5] flex md:flex-row flex-col md:gap-20 gap-12 lg:px-36 px-4 py-20'>
+      <section className='bg-[#F5F5F5] flex md:flex-row md:justify-center flex-col md:gap-20 gap-12  px-4 py-20'>
           <div className='max-w-[550px] flex flex-col'>
             <h1 className='text-5xl font-bold leading-16 mb-10'>Forever Homes Shelter</h1>
-            <p className=' text-lg font-medium leading-10 mb-4'>Our mission is to rescue and provide rehabilitation to dogs and cats that are critically injured or neglected. We have already saved the lives of 10,000 animals. We are not just a rescue, we are a refuge.</p>
+            <p className=' md:text-lg font-medium leading-10 mb-4'>Our mission is to rescue and provide rehabilitation to dogs and cats that are critically injured or neglected. We have already saved the lives of 10,000 animals. We are not just a rescue, we are a refuge.</p>
             <h3 className='text-2xl font-bold mb-4'>Your Gift Helps Save Lives</h3>
             <div className='flex gap-6'>
               <button onClick={handleModalDonate} className="rounded-3xl bg-pink-600 py-3 px-4 flex items-center font-bold text-white cursor-pointer">
@@ -55,7 +55,7 @@ const HomePage = () => {
                   <span className='text-white font-bold text-center md:text-3xl text-2xl'>Tails Found a Home</span>
               </div>
           </div>
-          <div className="carousel-container">
+          <div >
             <Splide
               options={{
                 type: "loop",
@@ -92,7 +92,9 @@ const HomePage = () => {
                 ))}
               </ul>
             :
+            <div className="flex justify-center items-center w-full">
               <Splide
+                className="w-full max-w-[400px]"
                 options={{
                   type: "loop",
                   perPage: 1,
@@ -100,19 +102,21 @@ const HomePage = () => {
                   arrows: false,
                   pagination: true,
                 }}
+                
               >
                 {services.map((service, index) => (
-                  <SplideSlide key={index} className="carousel-slide">
+                  <SplideSlide key={index} className="carousel-slide flex justify-center">
                     <div className="max-w-[320px] border-2 border-white rounded-2xl p-6">
-                      <div className='flex items-center justify-between'>
+                      <div className="flex items-center justify-between">
                         <h3 className="text-xl text-white font-bold mt-2">{service.title}</h3>
-                        <img src={service.image} alt={service.title} className="w-16 h-16" />              
+                        <img src={service.image} alt={service.title} className="w-16 h-16" />
                       </div>
                       <p className="text-gray-400 font-semibold">{service.description}</p>
                     </div>
                   </SplideSlide>
                 ))}
               </Splide>
+          </div>
           }         
         </div>
       </section>

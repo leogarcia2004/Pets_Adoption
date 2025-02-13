@@ -47,7 +47,7 @@ const Header = () => {
         </div>
       </header>
       : 
-      <header className="flex flex-wrap gap-14 justify-center md:items-center py-6 border-b-2 border-black">
+      <header className="bg-[#F5F5F5] flex flex-wrap gap-14 justify-center md:items-center py-6 border-b-2 border-black">
           <div className="flex justify-between items-center w-full">
             <img className="cursor-pointer ml-4" onClick={handleNavigate} src={logo} alt="Ícone cachorro e gato" />
             <div className="flex gap-6">

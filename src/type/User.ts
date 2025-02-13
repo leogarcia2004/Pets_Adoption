@@ -1,7 +1,7 @@
 export type UserDonate = {
     email?: string;
     payment?: number;
-    methodPyment?: string | undefined;
+    methodPayment?: string | undefined;
 }
 
 export type UserAdopt = {

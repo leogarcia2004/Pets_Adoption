@@ -4,6 +4,7 @@ import { useWidthContext } from "../context/WidthContext";
 import { UserAdopt} from "../type/User";
 import { validateAdopt } from "../utils/validateAdopt";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ModalAdopt = () => {
 
@@ -12,6 +13,7 @@ const ModalAdopt = () => {
     const [name, setName] = useState('')
     const [dateBirth, setDateBirth] = useState('')
     const [errors, setErrors] = useState<UserAdopt | null>(null)
+    const navigate = useNavigate()
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
@@ -20,8 +22,12 @@ const ModalAdopt = () => {
         if(Object.keys(validadeErros).length > 0) {
           setErrors(validadeErros) 
           return
+        }   
+        navigate('/thank')
+        if (handleModalAdopt) {
+          handleModalAdopt()
         }
-      }
+    }
 
   return ( 
         <dialog  className="w-[380px] max-w-[380px] h-fit flex flex-col rounded-3xl py-8 px-7 m-auto fixed z-20 top-8">
@@ -48,7 +54,7 @@ const ModalAdopt = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <label className="text-pink-500 font-semibold text-xs">DATE OF BIRTH<strong className="text-blue-500">*</strong></label>
-                        <input className="border border-gray-500 text-sm w-full h-11 rounded-lg px-2" value={dateBirth} type="date" name="data" id="data" title="Date of Birth" placeholder="Enter your date of birth"/>
+                        <input className="border border-gray-500 text-sm w-full h-11 rounded-lg px-2" value={dateBirth} onChange={(e) => setDateBirth(e.target.value)} type="date" name="data" id="data" title="Date of Birth" placeholder="Enter your date of birth"/>
                         {errors?.dateBirth && (
                             <small className="text-xs text-red-500 mt-1">{errors?.dateBirth}</small>
                         )}
