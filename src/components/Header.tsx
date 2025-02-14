@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../public/images/header/icone_cachorro-gato.png";
+import logo from "../public/header/icone_cachorro-gato.png";
 import { useNavigate } from "react-router-dom";
 import { useWidthContext } from "../context/WidthContext";
 
