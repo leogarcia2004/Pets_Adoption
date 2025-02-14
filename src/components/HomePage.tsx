@@ -1,5 +1,5 @@
 import CatDog from '../public/homePage/cat_dog_home.png'
-import CatDog2 from '../public/images/homePage/imagem_cachorro_gato2.png'
+import CatDog2 from '../public/homePage/imagem_cachorro_gato2.png'
 import HeartLeft from '../public/homePage/heart_left.png'
 import HeartRight from '../public/homePage/heart_right.png'
 import Cat from '../public/homePage/cat.png'
