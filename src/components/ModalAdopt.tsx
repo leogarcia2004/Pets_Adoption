@@ -1,5 +1,5 @@
 
-import WhiteDog from '../public/images/adoptionPage/icon_white_dog.png'
+import WhiteDog from '../public/adoptionPage/icon_white_dog.png'
 import { useWidthContext } from "../context/WidthContext";
 import { UserAdopt} from "../type/User";
 import { validateAdopt } from "../utils/validateAdopt";
