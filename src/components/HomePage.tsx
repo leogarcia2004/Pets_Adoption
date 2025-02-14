@@ -1,9 +1,9 @@
-import CatDog from '../public/images/homePage/cat_dog_home.png'
+import CatDog from '../public/homePage/cat_dog_home.png'
 import CatDog2 from '../public/images/homePage/imagem_cachorro_gato2.png'
-import HeartLeft from '../public/images/homePage/heart_left.png'
-import HeartRight from '../public/images/homePage/heart_right.png'
-import Cat from '../public/images/homePage/cat.png'
-import Dog from '../public/images/homePage/dog.png'
+import HeartLeft from '../public/homePage/heart_left.png'
+import HeartRight from '../public/homePage/heart_right.png'
+import Cat from '../public/homePage/cat.png'
+import Dog from '../public/homePage/dog.png'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useWidthContext } from "../context/WidthContext";

@@ -1,43 +1,60 @@
+import Cat1 from '../public/home_adoption_Page/image_cat1.png';
+import Cat2 from '../public/home_adoption_Page/image_cat2.png';
+import Dog1 from '../public/home_adoption_Page/image_dog1.png';
+import Dog2 from '../public/home_adoption_Page/image_dog2.png';
+import Cat3 from '../public/home_adoption_Page/image_cat3.png';
+import Dog3 from '../public/home_adoption_Page/image_dog3.png';
+import Cat4 from '../public/home_adoption_Page/image_cat4.png';
+import Dog4 from '../public/home_adoption_Page/image_dog4.png';
+
+import PinkHome from '../public/homePage/icon_pink_home.png';
+import More from '../public/homePage/icon_more.png';
+import Hotel from '../public/homePage/icon_hotel.png';
+import Cage from '../public/homePage/icon_cage.png';
+import HappyFace from '../public/homePage/icon_happy_face.png';
+import Bone from '../public/homePage/icon_bone.png';
+
+
 export const animalsCarousel = [
-    '/src/public/images/home_adoption_Page/image_cat1.png',
-    '/src/public/images/home_adoption_Page/image_cat2.png',
-    '/src/public/images/home_adoption_Page/image_dog1.png',
-    '/src/public/images/home_adoption_Page/image_dog2.png',
-    '/src/public/images/home_adoption_Page/image_cat3.png',
-    '/src/public/images/home_adoption_Page/image_dog3.png',
+    Cat1,
+    Cat2,
+    Dog1,
+    Dog2,
+    Cat3,
+    Dog3,
 ]
 
 export const animalsAdoption = [
     {
-        image: '/src/public/images/home_adoption_Page/image_cat1.png',
+        image: Cat1,
         name: 'BOB'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_cat2.png',
+        image: Cat2,
         name: 'MARY'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_dog1.png',
+        image: Dog1,
         name: 'RONEY'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_dog2.png',
+        image: Dog2,
         name: 'FLOCKS'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_cat3.png',
+        image: Cat3,
         name: 'CLORINDE'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_dog3.png',
-        name: 'ARISTOLE'
+        image: Dog3,
+        name: 'A'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_cat4.png',
+        image: Cat4,
         name: 'MATT'
     },
     {
-        image: '/src/public/images/home_adoption_Page/image_dog4.png',
+        image: Dog4,
         name: 'ROBS'
     }
 ]
@@ -45,37 +62,37 @@ export const animalsAdoption = [
 export const services = [
     {
       title: "Shelter",
-      image: "/src/public/images/homePage/icon_pink_home.png",
+      image: PinkHome,
       description:
         "We provide shelter for many of our cats and dogs. In addition to a roof over their heads, we pay for heat, food, water, and electricity, and general maintenance."
     },
     {
       title: "Vetting",
-      image: "/src/public/images/homePage/icon_more.png",
+      image: More,
       description:
         "We provide vet care to our cats and dogs. We take care of general health assessments, medications, vaccinations, spay/neuter procedures, and other surgeries."
     },
     {
       title: "Facilities",
-      image: "/src/public/images/homePage/icon_hotel.png",
+      image: Hotel,
       description:
         "We currently utilize a facility in a dilapidated state, which has necessitated significant investments to make it usable again. We are still restoring the building to its full potential."
     },
     {
       title: "Transport",
-      image: "/src/public/images/homePage/icon_cage.png",
+      image: Cage,
       description:
         "Each year, we transport over 600 dogs and 350 cats from kill shelters and emergency distressing situations to hospitals or our shelter, providing them with a second chance at life."
     },
     {
       title: "Fosters",
-      image: "/src/public/images/homePage/icon_happy_face.png",
+      image: HappyFace,
       description:
         "We’re lucky to have a group of individuals who generously foster our cats and dogs in their homes. We cover all their veterinary needs and provide necessary food supplies."
     },
     {
       title: "Food",
-      image: "/src/public/images/homePage/icon_bone.png",
+      image: Bone,
       description:
         "Each year, we nourish our cats and dogs with over 2,200 cans of wet food and 1,600 pounds of dry food to ensure their well-being and keep them content and thriving."
     }
