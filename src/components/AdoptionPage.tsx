@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import {animalsAdoption} from "./constantes"
-import WhiteDog from "../public/images/adoptionPage/icon_white_dog.png"
+import WhiteDog from "../public/adoptionPage/icon_white_dog.png"
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useWidthContext } from "../context/WidthContext";
